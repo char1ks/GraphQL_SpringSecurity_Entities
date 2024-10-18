@@ -1,0 +1,26 @@
+type Actor{
+    id:ID!,
+    username:String,
+    password:String,
+    age:Int,
+    actor_role:String
+}
+type fruitType {
+    id: ID!,
+    fruit_type_name: String,
+    short_description: String,
+}
+
+type Query{
+    allActors(count:Int):[Actor]
+    concreteActor(id:ID):Actor
+    loginActor(username:String!,password:String!):Actor
+    currentActor:Actor
+    allFruitTypes(count: Int): [fruitType]
+    concreteFruitType(id: ID): fruitType
+    allByActorCreate: [fruitType]
+}
+type Mutation{
+    createFruitType(fruit_type_name:String!,short_description:String!):fruitType
+    createChief(username:String!,password:String!,age:Int!,actor_role:String!):Actor
+}

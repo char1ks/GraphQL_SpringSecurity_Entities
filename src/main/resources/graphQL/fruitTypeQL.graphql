@@ -1,0 +1,5 @@
+type fruitType {
+    id: ID!,
+    fruitTypeName: String,
+    shortDescription: String,
+}
